@@ -24,10 +24,10 @@ border-spacing: 0 0.5rem;
     &:first-child{
       color: var(--text-title);
     }
-    &.deposit{
+    &.DEPOSIT{
       color: var(--green)
     }
-    &.withdraw{
+    &.TRANSFER{
       color: var(--red)
     }
 }

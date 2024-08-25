@@ -5,7 +5,7 @@ import IncomeImg from '../../assets/income.svg'
 import OutcomeImg from '../../assets/outcome.svg'
 import { FormEvent, useContext, useState } from 'react'
 import { TransactionContext } from '../../TransactionContext'
-import toast, { Toaster } from 'react-hot-toast'
+import toast from 'react-hot-toast'
 import { api } from '../../services/api'
 
 
@@ -37,6 +37,7 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMo
   }
 
   async function createTransaction(transactionsInput: any) {
+    console.log('AQUIII', transactionsInput)
     api.defaults.validateStatus = function () {
       return true;
     }
@@ -118,7 +119,6 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMo
           Cadastrar
         </button>
       </Container>
-      <Toaster />
     </Modal>
   )
 }

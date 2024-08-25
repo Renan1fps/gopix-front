@@ -2,12 +2,10 @@ import { useContext } from "react";
 import { TransactionContext } from "../../TransactionContext";
 import { Container } from "./style";
 
+export function Transactions() {
+  const { transactions } = useContext(TransactionContext)
 
-
-export function Transactions(){
-  const {transactions} = useContext(TransactionContext)
-  
-  return(
+  return (
     <Container>
       <table>
         <thead>
@@ -19,19 +17,19 @@ export function Transactions(){
           </tr>
         </thead>
         <tbody>
-         {transactions.map(transaction => (
+          {transactions.map(transaction => (
             <tr key={transaction.transactionId}>
               <td>{transaction.documentReceive}</td>
               <td className={transaction.type}>
-                {new Intl.NumberFormat('pt-BR',{
+                {new Intl.NumberFormat('pt-BR', {
                   style: "currency",
                   currency: "BRL"
-                }).format(transaction.amount)} 
+                }).format(transaction.amount)}
               </td>
               <td>{transaction.category}</td>
-              <td>{new Intl.DateTimeFormat("pt-BR").format( new Date(transaction.date))}</td>
-          </tr>
-         ))}
+              <td>{new Intl.DateTimeFormat("pt-BR").format(new Date(transaction.date))}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </Container>

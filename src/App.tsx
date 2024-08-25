@@ -8,7 +8,9 @@ import { Route, Routes, useNavigate } from 'react-router-dom';
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import { Toaster } from "react-hot-toast";
+import Modal from "react-modal";
 
+Modal.setAppElement('#root');
 
 function App() {
   const [isOpenTransactionModal, setIsOpenTransactionModal] = useState(false);
